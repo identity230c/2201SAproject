@@ -2,8 +2,12 @@ version: '3.9'
 
 services:
   app:
-    image: test_flask:2
+    image: identity230c/sa_server_flask:deploy
     ports:
       - "8080:80"
+    links:
+      - tf_server:tf_server
   tf_server:
-    image: test_tf
+    image: identity230c/my_server_tf:deploy
+    expose:
+      - "8501"
