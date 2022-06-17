@@ -4,7 +4,7 @@ WORKDIR /saProject
 
 RUN pip install flask
 RUN pip install numpy
-RUN pip install tensorflow
+RUN pip install pillow
 
 COPY ./app ./app
 

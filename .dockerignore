@@ -1,2 +1,4 @@
 .git
-./tensorflow-server
+tensorflow-server/*
+testImgSet/*
+front/*

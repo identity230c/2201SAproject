@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>그림판</title>
+</head>
+<body>
+    <link rel="stylesheet" href="front.css">
+
+</body>
+  <canvas id="blackCanvas" width="700" height="700">  </canvas>
+  <button id="saveBtn">SAVE</button>
+  <form action="predict" method="post" onsubmit="sendImg()">
+    <button id="sendBtn">upload하기</button>
+    <input type="hidden" name="file" value="" id="img">
+  </form>
+
+  <!-- myScript -->
+  <script src="{{ url_for('static',filename='js/canvas.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/post.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/save.js') }}"></script>
+</html>

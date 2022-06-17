@@ -1,17 +1,21 @@
-from flask import Flask
-import os
+from flask import Flask, render_template
+
+from app.controls import Canvas
 
 def create_app():
-  app = Flask(__name__, template_folder='templates')
+  app = Flask(__name__, template_folder='views')  
 
-  app.config['IMG_FOLDER'] = os.path.join('./static','images')
-  app.config['tfServer'] = 'http://host.docker.internal:8501/v1/models/test:predict'
+  app.config['IMG_FOLDER'] = './app/static/images/'
+  app.config['tfServer'] = 'http://tf_server:8501/v1/models/test:predict'
 
-  from app.views import recievePng # 블루프린트가 있는 패키지명, 파일명 순
-  app.register_blueprint(recievePng.bp)
-
+  from app.controls import UploadImg, Canvas
+  
+  app.register_blueprint(Canvas.bp)
+  app.register_blueprint(UploadImg.bp)
+  
   @app.route('/')
   def index():
-    return '인덱스임'
-
+    return render_template('index.html')
+  
   return app
+
