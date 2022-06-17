@@ -1,4 +1,4 @@
 */__pycache__/
-./app/images/*.png
-*/front/
-./front
+*/images/*.png
+front/*
+front
