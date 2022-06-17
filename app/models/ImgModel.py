@@ -32,6 +32,9 @@ class ImgOperation: # 추상클래스
   
   def getFileName(self):
     return self.filename + '.' + self.format
+  
+  def getSmallFileName(self):
+    return self.filename + '-small' + '.' + self.format
       
 
 class Base64ToPng(ImgOperation):  

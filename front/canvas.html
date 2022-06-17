@@ -6,8 +6,8 @@
   <title>그림판</title>
 </head>
 <body>
-  <link rel="stylesheet" href="{{url_for('static', filename='css/frame.css')}}">
-  <link rel="stylesheet" href="{{url_for('static', filename='css/canvas.css')}}">
+  <link rel="stylesheet" href="frame.css">
+  <link rel="stylesheet" href="canvas.css">
 </body>
   <div class="main-frame">
     <div class="main-box">
@@ -15,16 +15,15 @@
       <h4>그림을 그린 뒤 업로드하면 AI가 손글씨를 인식합니다</h4>
       <canvas id="blackCanvas" width="700" height="700">  </canvas>
       <div class="btn-box">
-        <button id="saveBtn" class="canvas-btn">그림 저장하기</button>
+        <button id="saveBtn" class="canvas-btn">SAVE</button>
         <form action="predict" method="post" onsubmit="sendImg()">
-          <button id="sendBtn" class="canvas-btn">그림 업로드하기</button>
+          <button id="sendBtn" class="canvas-btn">upload하기</button>
           <input type="hidden" name="file" value="" id="img">
         </form>              
         </div>
       </div>
   </div>
-  <!-- myScript -->
-  <script src="{{ url_for('static',filename='js/canvas.js') }}"></script>
-  <script src="{{ url_for('static',filename='js/post.js') }}"></script>
-  <script src="{{ url_for('static',filename='js/save.js') }}"></script>
+  <script src="canvas.js"></script>
+  <script src="save.js"></script>
+  <script src="post.js"></script>  
 </html>
