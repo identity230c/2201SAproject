@@ -20,10 +20,13 @@ class ImgOperation: # 추상클래스
     return 
   
   def saveSmall(self):
+    # 텐서플로에서 사용할 수 있도록 이미지 크기 줄이는 메서드
     raw = Image.open(self.getOriginPath())
     cooked = raw.resize((28, 28))
     cooked.save(self.getSmallPath(), self.format)
 
+
+  # 아래는 파일 경로와 파일명 반환하는 메서드
   def getOriginPath(self):
     return self.path + self.getFileName()
 

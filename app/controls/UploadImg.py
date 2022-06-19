@@ -3,6 +3,7 @@ from app.models import ImgModel, TfModel
 
 bp = Blueprint('uploadImg', __name__, url_prefix='/upload', template_folder='views')
 
+# 사용자가 업로드한 이미지 질의하는 파일
 @bp.route('/')
 def upload():
   return render_template('uploadPage.html')

@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  app:
+    image: identity230c/sa_server_flask:deploy
+    ports:
+      - "80:80"
+    deploy:
+      mode: replicated
+      replicas: 3
+  tf_server:
+    image: identity230c/my_server_tf:deploy
+    deploy:
+      mode: replicated
+      replicas: 3

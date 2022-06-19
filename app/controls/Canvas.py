@@ -3,6 +3,7 @@ from app.models import ImgModel, TfModel
 
 bp = Blueprint('canvas', __name__, url_prefix='/canvas', template_folder='views')
 
+# Canvas로 사용자가 그린 그림 질의하는 파일
 @bp.route('/')
 def canvas():
   return render_template('canvasPage.html')
